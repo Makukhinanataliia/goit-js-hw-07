@@ -1,5 +1,3 @@
-const galleryContainer = document.querySelector("ul.gallery");
-
 const images = [
   {
     url: "https://images.pexels.com/photos/140134/pexels-photo-140134.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
@@ -26,22 +24,11 @@ const images = [
     alt: "Zebras on Zebra",
   },
 ];
-
-const createGalleryItem = (image) => {
-  const listItem = document.createElement("li");
-  const imageElement = document.createElement("img");
-
-  imageElement.src = image.url;
-  imageElement.alt = image.alt;
-
-  listItem.appendChild(imageElement);
-  return listItem;
-};
-
-const galleryItems = images.map(createGalleryItem);
-
-// Додаємо всі елементи галереї до контейнера за одну операцію
-galleryContainer.append(...galleryItems);
-
-// Додаємо клас для оформлення флексбоксами
-galleryContainer.classList.add("gallery-container");
+const galleryContainer = document.querySelector(".gallery");
+const createGalleryItem = images
+  .map(
+    (image) =>
+      `<li class="list-item"><img src=${image.url} width=360px height=240px alt="${image.alt}"></li>`
+  )
+  .join("");
+galleryContainer.insertAdjacentHTML("beforeend", createGalleryItem);
