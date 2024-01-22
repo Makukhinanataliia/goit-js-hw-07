@@ -1,5 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
   const form = document.querySelector(".login-form");
+  const submitButton = form.querySelector('button[type="submit"]');
+
   function handleSubmit(event) {
     event.preventDefault();
     const email = form.elements.email.value;
@@ -16,9 +18,9 @@ document.addEventListener("DOMContentLoaded", function () {
       form.reset();
     }
   }
-});
-// Отримуємо посилання на елемент кнопки за типом
-const submitButton = document.querySelector('button[type="submit"]');
 
-// Змінюємо текст кнопки
-submitButton.textContent = "Log in";
+  form.addEventListener("submit", handleSubmit);
+
+  // Changing the button text
+  submitButton.textContent = "Log in";
+});

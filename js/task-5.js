@@ -12,10 +12,10 @@ document.addEventListener("DOMContentLoaded", function () {
   changeColorButton.addEventListener("click", function () {
     const randomColor = getRandomHexColor();
 
-    // Задаємо колір фону для <body>
+    // Setting the background color for <body>
     bodyElement.style.backgroundColor = randomColor;
 
-    // Задаємо текстовий вміст для span.color
+    //Setting the text content for span.color
     colorSpan.textContent = randomColor;
   });
 });

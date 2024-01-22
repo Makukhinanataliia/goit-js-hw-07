@@ -25,10 +25,10 @@ const images = [
   },
 ];
 const galleryContainer = document.querySelector(".gallery");
-const createGalleryItem = images
+const galleryItemsMarkup = images
   .map(
     (image) =>
       `<li class="list-item"><img src=${image.url} width=360px height=240px alt="${image.alt}"></li>`
   )
   .join("");
-galleryContainer.insertAdjacentHTML("beforeend", createGalleryItem);
+galleryContainer.insertAdjacentHTML("beforeend", galleryItemsMarkup);

@@ -1,3 +1,6 @@
+let size = 30; // Local variable for the box size
+const deltaSize = 10;
+
 function getRandomHexColor() {
   return `#${Math.floor(Math.random() * 16777215)
     .toString(16)
@@ -22,7 +25,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     clearBoxes();
-    let size = 30;
 
     for (let i = 0; i < amount; i++) {
       const box = document.createElement("div");
@@ -31,7 +33,7 @@ document.addEventListener("DOMContentLoaded", () => {
       box.style.backgroundColor = getRandomHexColor();
 
       boxesContainer.appendChild(box);
-      size += 10;
+      size += deltaSize;
     }
 
     inputElement.value = "";
@@ -43,5 +45,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function clearBoxes() {
     boxesContainer.innerHTML = "";
+    size = 30; // Resetting the size
   }
 });
